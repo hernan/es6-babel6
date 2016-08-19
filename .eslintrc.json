@@ -1,0 +1,19 @@
+{
+    "extends": "standard",
+    "installedESLint": true,
+    "plugins": [
+        "standard",
+        "promise"
+    ],
+    "globals": {
+        "jQuery": true,
+        "$": true
+    },
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "semi": ["error", "always", { "omitLastInOneLineBlock": true}]
+    }
+}
