@@ -14,15 +14,15 @@ var gutil = require('gulp-util');
 gulp.task('es6', function() {
 	browserify({ debug: true })
 		.transform(babelify)
-		.require("./app/app.js", { entry: true })
+		.require("./src/app.js", { entry: true })
 		.bundle()
 		.on('error',gutil.log)
-		.pipe(source('bundle.js'))
-    	.pipe(gulp.dest('./'));
+		.pipe(source('./app.js'))
+    	.pipe(gulp.dest('./app'));
 });
 
 gulp.task('watch',function() {
-	gulp.watch(['./app/**/*.js'],['es6'])
+	gulp.watch(['./src/**/*.js'],['es6'])
 });
  
 gulp.task('default', ['es6','watch']);
